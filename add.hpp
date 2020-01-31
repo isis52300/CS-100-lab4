@@ -10,31 +10,30 @@ public:
         object2 = new Op(num2);
     }
     
-    Add(double num1, Base obj1) : Base() {
+    Add(double num1, Base* obj1) : Base() {
         object1 = new Op(num1);
         object2 = obj1;
     }
     
-    Add(Base obj1, double num1) : Base() {
+    Add(Base* obj1, double num1) : Base() {
         object1 = obj1;
         object2 = new Op(num1);
     }
     
-    Add(Base obj1, Base obj2) : Base() {
+    Add(Base* obj1, Base* obj2) : Base() {
         object1 = obj1;
         object2 = obj2;
     }
     
     virtual double evaluate() {
-        return object1.evaluate() + object2.evaluate();
+        return object1->evaluate() + object2->evaluate();
     }
     
-    virtual std::string stringify() { return object1.stringify() + '+' + object2.stringify(); }
+    virtual std::string stringify() { return object1->stringify() + '+' + object2->stringify(); }
     
 private:
-    Base object1;
-    Base object2;
-    string function;
+    Base* object1;
+    Base* object2;
 };
 
 #endif //__ADD_HPP__
