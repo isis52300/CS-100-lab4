@@ -14,7 +14,7 @@ public:
         return object1->evaluate() + object2->evaluate();
     }
     
-    virtual std::string stringify() { return object1->stringify() + '+' + object2->stringify(); }
+    virtual std::string stringify() { return object1->stringify() + " + " + object2->stringify(); }
     
 private:
     Base* object1;
