@@ -25,13 +25,13 @@ TEST(AllTest, EvaluateAddPow) {
     Base* three = new Op(3);
     Base* pow = new Pow(three, two);
     Base* add = new Add(two, pow);
-    EXPECT_EQ(add->evaluate(), 18);
+    EXPECT_EQ(add->evaluate(), 11);
 }
 
 TEST(AllTest, EvaluateAddDiv) {
     Base* two = new Op(2);
     Base* three = new Op(3);
-    Base* div = new Pow(two, two);
+    Base* div = new Div(two, two);
     Base* add = new Add(three, div);
     EXPECT_EQ(add->evaluate(), 4);
 }
@@ -47,7 +47,7 @@ TEST(AllTest, EvaluateAddDiv) {
 TEST(AllTest, EvaluateAddAdd) {
     Base* two = new Op(2);
     Base* three = new Op(3);
-    Base* add1 = new Sub(two, two);
+    Base* add1 = new Add(two, two);
     Base* add2 = new Add(three, add1);
     EXPECT_EQ(add2->evaluate(), 7);
 }
@@ -72,7 +72,7 @@ TEST(AllTest, StringifyAddPow) {
 TEST(AllTest, StringifyAddDiv) {
     Base* two = new Op(2);
     Base* three = new Op(3);
-    Base* div = new Pow(two, two);
+    Base* div = new Div(two, two);
     Base* add = new Add(three, div);
     EXPECT_EQ(add->stringify(), "3.000000 + 2.000000 / 2.000000");
 }
@@ -88,7 +88,7 @@ TEST(AllTest, StringifyAddDiv) {
 TEST(AllTest, StingifyAddAdd) {
     Base* two = new Op(2);
     Base* three = new Op(3);
-    Base* add1 = new Sub(two, two);
+    Base* add1 = new Add(two, two);
     Base* add2 = new Add(three, add1);
     EXPECT_EQ(add2->stringify(), "3.000000 + 2.000000 + 2.000000");
 }

@@ -6,7 +6,7 @@
 
 class Pow : public Base {
 public:
-    Pow(Base obj1, Base obj2) : Base() {
+    Pow(Base* obj1, Base* obj2) : Base() {
         object1 = obj1;
         object2 = obj2;
     }
