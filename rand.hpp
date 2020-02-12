@@ -1,6 +1,8 @@
 #ifndef __RAND_HPP__
 #define __RAND_HPP__
 
+#include <stdlib.h>
+
 #include "base.hpp"
 
 class Rand : public Base {
