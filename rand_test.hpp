@@ -9,12 +9,13 @@
 #include "rand.hpp"
 
 TEST(RandTest, RandEvaluate) {
-	Rand* rand = new Rand(
-	EXPECT_EQ(rand->evaluate(), 
+    srand(523);
+    Rand* rand = new Rand();
+    EXPECT_EQ(rand->evaluate(), 5);
 }
 
-TEST(RandTest, RandStringify) {
-	
-}
+//TEST(RandTest, RandStringify) {
+//
+//}
 
 #endif //__RAND_TEST_HPP__
