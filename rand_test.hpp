@@ -11,7 +11,7 @@
 TEST(RandTest, RandEvaluate) {
     srand(523);
     Rand* rand = new Rand();
-    EXPECT_EQ(rand->evaluate(), 5);
+    EXPECT_EQ(rand->evaluate(), 55);
 }
 
 //TEST(RandTest, RandStringify) {

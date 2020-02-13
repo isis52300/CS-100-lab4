@@ -7,7 +7,7 @@
 #include "mult.hpp"
 
 TEST(MultTest, MultEvaluateZeroMZero) {
-	Op* zerio = new Op(0);
+	Op* zero = new Op(0);
 	Mult* mult = new Mult(zero, zero);
 	EXPECT_EQ(mult->evaluate(), 0);
 }
@@ -31,7 +31,7 @@ TEST(MultTest, MultStringifyZeroMZero) {
 }
 
 TEST(MultTest, MultStringifyPosMPos) {
-	Op* six = new Op(5);
+	Op* six = new Op(6);
 	Mult* mult = new Mult(six, six);
 	EXPECT_EQ(mult->stringify(), "6.000000 * 6.000000");
 }

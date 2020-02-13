@@ -2,6 +2,7 @@
 #define __SUB_HPP__
 
 #include "base.hpp"
+#include "op.hpp"
 
 class Sub : public Base {
 	public:
@@ -10,11 +11,11 @@ class Sub : public Base {
 			object2 = obj2;
 		}
 
-		virtual double evalute() {
+		double evalute() {
 			return object1->evaluate() - object2->evaluate();
 		}
 		
-		virtual std::string stringify() {
+		std::string stringify() {
 			return object1->stringify() + " - " + object2->stringify();
 		}
 

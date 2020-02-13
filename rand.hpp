@@ -8,7 +8,7 @@
 class Rand : public Base {
 	public:
 		Rand() : Base() {
-			object = Op(rand() % 100);
+			object = new Op(rand() % 100);
 		}
 		
 		virtual double evaluate() {

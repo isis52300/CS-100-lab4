@@ -84,7 +84,7 @@ TEST(AllTest, StringifyMultDiv) {
     Base* four = new Op(4);
     Base* mult = new Mult(two, six);
     Base* div = new Div(mult, four);
-    EXPECT_EQ(add->stringify(), "2.000000 * 6.000000 / 4.000000");
+    EXPECT_EQ(div->stringify(), "2.000000 * 6.000000 / 4.000000");
 }
 
 TEST(AllTest, StringifyAddAdd) {
