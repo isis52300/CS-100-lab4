@@ -13,7 +13,7 @@ TEST(DivTest, DivEvaluateZeroDNum) {
     EXPECT_EQ(div->evaluate(), 0);
 }
 
-TEST(DivTest, DivEvaluatepPositiveDPositive) {
+TEST(DivTest, DivEvaluatePositiveDPositive) {
     Op* five = new Op(5);
     Div* div = new Div(five, five);
     EXPECT_EQ(div->evaluate(), 1);
@@ -38,6 +38,26 @@ TEST(DivTest, DivEvaluatFraction) {
     Op* two = new Op(2);
     Div* div = new Div(one, two);
     EXPECT_EQ(div->evaluate(), 0.5);
+}
+
+TEST(DivTest, DivStringifyZeroDNum) {
+    Op* zero = new Op(0);
+    Op* num = new Op(5);
+    Div* div = new Div(zero, num);
+    EXPECT_EQ(div->stringify(), "0.000000 / 5.000000" );
+}
+
+TEST(DivTest, DivStringifyPositiveDPositive) {
+    Op* five = new Op(5);
+    Div* div = new Div(five, five);
+    EXPECT_EQ(div->stringify(), "5.000000 / 5.000000");
+}
+
+TEST(DivTest, DivStringifyNegativeDPositve) {
+    Op* nten = new Op(-10);
+    Op* two = new Op(2);
+    Div* div = new Div(nten, two);
+    EXPECT_EQ(div->stringify(), "-10.000000 / 2.000000");
 }
 
 #endif //__ADD_TEST_HPP__

@@ -14,8 +14,10 @@ TEST(RandTest, RandEvaluate) {
     EXPECT_EQ(rand->evaluate(), 55);
 }
 
-//TEST(RandTest, RandStringify) {
-//
-//}
+TEST(RandTest, RandStringify) {
+    srand(523);
+    Rand* rand = new Rand();
+    EXPECT_EQ(rand->stringify(), "55.000000");
+}
 
 #endif //__RAND_TEST_HPP__
